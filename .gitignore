@@ -1,0 +1,12 @@
+node_modules/
+dist/
+scripts/
+.tools/
+.vercel/
+.env
+.DS_Store
+*.log
+.vscode/
+.idea/
+coverage/
+.vite/

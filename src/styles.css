@@ -1,0 +1,137 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-glow: var(--primary-glow);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-bubble-user: var(--bubble-user);
+  --color-bubble-user-foreground: var(--bubble-user-foreground);
+  --color-bubble-sofia: var(--bubble-sofia);
+  --color-bubble-sofia-foreground: var(--bubble-sofia-foreground);
+  --color-online: var(--online);
+}
+
+:root {
+  --radius: 0.875rem;
+
+  /* iMessage-inspired: cool, clean, premium */
+  --background: oklch(0.995 0.002 250);
+  --foreground: oklch(0.18 0.015 260);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.015 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.015 260);
+
+  /* iOS blue */
+  --primary: oklch(0.62 0.19 255);
+  --primary-foreground: oklch(1 0 0);
+  --primary-glow: oklch(0.72 0.16 250);
+
+  --secondary: oklch(0.96 0.005 250);
+  --secondary-foreground: oklch(0.25 0.02 260);
+
+  --muted: oklch(0.965 0.004 250);
+  --muted-foreground: oklch(0.55 0.015 260);
+
+  --accent: oklch(0.95 0.012 250);
+  --accent-foreground: oklch(0.25 0.02 260);
+
+  --destructive: oklch(0.62 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.92 0.005 250);
+  --input: oklch(0.96 0.005 250);
+  --ring: oklch(0.62 0.19 255);
+
+  /* iMessage bubbles */
+  --bubble-user: oklch(0.62 0.19 255);
+  --bubble-user-foreground: oklch(1 0 0);
+  --bubble-sofia: oklch(0.94 0.006 250);
+  --bubble-sofia-foreground: oklch(0.18 0.015 260);
+
+  --online: oklch(0.72 0.18 145);
+
+  --gradient-primary: linear-gradient(180deg, oklch(0.66 0.19 255), oklch(0.58 0.2 260));
+  --gradient-avatar: linear-gradient(135deg, oklch(0.7 0.18 280), oklch(0.65 0.2 255));
+  --gradient-warm: linear-gradient(165deg, oklch(0.97 0.02 250), oklch(0.94 0.03 280));
+  --gradient-sunny: linear-gradient(135deg, oklch(0.85 0.14 85), oklch(0.72 0.18 55));
+  --shadow-soft: 0 6px 24px -10px oklch(0.4 0.05 260 / 0.18);
+  --shadow-card: 0 1px 3px oklch(0.3 0.03 260 / 0.04), 0 1px 2px oklch(0.3 0.03 260 / 0.03);
+  --shadow-elevated: 0 10px 40px -12px oklch(0.3 0.05 260 / 0.18);
+}
+
+.dark {
+  --background: oklch(0.16 0.01 260);
+  --foreground: oklch(0.96 0.008 250);
+  --card: oklch(0.2 0.012 260);
+  --card-foreground: oklch(0.96 0.008 250);
+  --popover: oklch(0.2 0.012 260);
+  --popover-foreground: oklch(0.96 0.008 250);
+  --primary: oklch(0.68 0.18 255);
+  --primary-foreground: oklch(1 0 0);
+  --primary-glow: oklch(0.75 0.15 250);
+  --secondary: oklch(0.24 0.015 260);
+  --secondary-foreground: oklch(0.96 0.008 250);
+  --muted: oklch(0.22 0.012 260);
+  --muted-foreground: oklch(0.65 0.015 250);
+  --accent: oklch(0.26 0.02 260);
+  --accent-foreground: oklch(0.96 0.008 250);
+  --destructive: oklch(0.65 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.26 0.012 260);
+  --input: oklch(0.24 0.012 260);
+  --ring: oklch(0.68 0.18 255);
+  --bubble-user: oklch(0.62 0.19 255);
+  --bubble-user-foreground: oklch(1 0 0);
+  --bubble-sofia: oklch(0.26 0.015 260);
+  --bubble-sofia-foreground: oklch(0.96 0.008 250);
+  --online: oklch(0.7 0.18 145);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html, body, #root {
+    height: 100%;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Inter", "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.01em;
+  }
+  h1, h2, h3 {
+    letter-spacing: -0.02em;
+  }
+}
