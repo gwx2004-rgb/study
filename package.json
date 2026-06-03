@@ -10,7 +10,6 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "postinstall": "node scripts/fix-router-apostrophe-path.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
