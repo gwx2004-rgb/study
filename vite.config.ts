@@ -10,18 +10,18 @@ import { tanstackStart } from '@tanstack/react-start/plugin/vite';
 import viteReact from '@vitejs/plugin-react';
 import { nitro } from 'nitro/vite';
 import path from 'path';
+import tailwindcss from '@tailwindcss/vite';  // 添加这一行
 
 export default defineConfig({
   plugins: [
+    tailwindcss(),      // 放在最前面
     tanstackStart(),
-    nitro({
-      preset: 'vercel',
-    }),
+    nitro({ preset: 'vercel' }),
     viteReact(),
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'), // 将 @ 映射到 src 目录
+      '@': path.resolve(__dirname, './src'),
     },
   },
 });
